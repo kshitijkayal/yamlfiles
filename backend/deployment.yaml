@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: modelsensitivity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: msa-backend
+          image: sensitivity.analyzer/msa_backend
+          ports:
+            - containerPort: 8000
+          resources:
+            limits:
+              cpu: "1"  # Set the CPU limit to 1 core
