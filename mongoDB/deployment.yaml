@@ -21,9 +21,7 @@ spec:
           volumeMounts:
             - name: mongodb-data
               mountPath: /data/db
- 
-  #Please let us know if the code below should be included as it is related to volume mounting yaml file.
-  # volumes:
-  # - name: mongodb-data
-  #   persistentVolumeClaim:
-  #     claimName: mongodb-pvc
+  volumes:
+  - name: mongodb-data
+    persistentVolumeClaim:
+      claimName: mongodb-pvc
