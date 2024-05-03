@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: mongo-msa
-          image: sensitivity.analyzer/msa_db
+          image: sensitivity.analyzer/MongoDB
           ports:
             - containerPort: 27017
           volumeMounts:
